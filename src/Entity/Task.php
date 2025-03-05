@@ -24,8 +24,13 @@ class Task
     private ?bool $status = false;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    #[ORM\GeneratedValue]
     private ?\DateTimeInterface $created_at = null;
+
+    #[ORM\PrePersist]
+    public function autoSetCreatedValue(): void
+    {
+        $this->created_at = new \DateTime();
+    }
 
     public function getId(): ?int
     {
@@ -78,12 +83,5 @@ class Task
     public function getCreatedAt(): ?\DateTimeInterface
     {
         return $this->created_at;
-    }
-
-    public function setCreatedAt(\DateTimeInterface $created_at): static
-    {
-        $this->created_at = $created_at;
-
-        return $this;
     }
 }
