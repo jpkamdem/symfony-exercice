@@ -12,6 +12,9 @@ DB_USER=root
 DB_DATABASE=app
 DATABASE_URL=postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_DATABASE}?schema=public
 
+PGADMIN_DEFAULT_EMAIL=johndoe@gmail.com
+PGADMIN_DEFAULT_PASSWORD=johndoe
+
 ```
 
 Voici le lien GET :
