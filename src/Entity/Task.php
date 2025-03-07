@@ -27,9 +27,11 @@ class Task
     private ?\DateTimeInterface $created_at = null;
 
     #[ORM\PrePersist]
-    public function autoSetCreatedValue(): void
+    public function autoSetCreatedAtValue(): void
     {
-        $this->created_at = new \DateTime();
+        if ($this->created_at === null) {
+            $this->created_at = new \DateTime();
+        }
     }
 
     public function getId(): ?int
