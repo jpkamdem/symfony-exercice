@@ -30,4 +30,6 @@ http://127.0.0.1:8000/task/datas
 - docker compose up -d
 - php bin/console doctrine:migrations:migrate
 - symfony serve
-- http://127.0.0.1:8000/task
+```bash
+http://127.0.0.1:8000/task
+```
